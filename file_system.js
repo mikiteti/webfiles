@@ -18,8 +18,14 @@ const attach_folder = async () => {
 }
 
 button.addEventListener('click', attach_folder);
-load();
+load().then(() => { show_handles(); });
 
 export {
     load, attach_folder
+}
+
+const show_handles = async () => {
+    for await(let handle of global.directoryHandle.values()){
+        document.getElementById("files").innerHTML += handle.name;
+    }
 }
