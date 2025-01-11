@@ -13,7 +13,7 @@ const load = async () => {
 }
 
 const attach_folder = async () => {
-    global.directoryHandle = await window.showDirectoryPicker();
+    global.directoryHandle = await showDirectoryPicker();
     await set('folder', global.directoryHandle);
 }
 
